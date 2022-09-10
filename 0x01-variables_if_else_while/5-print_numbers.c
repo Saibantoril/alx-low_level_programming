@@ -7,10 +7,10 @@
  */
 int main(void)
 {
-char i;
-for (i-0; i < 10; i++)
+char ch;
+for (ch = 'a' ; ch <= 'z' ; ch++)
 {
-	printf("%i", i);
+	putchar(ch);
 }
 putchar('\n');
 return (0);
