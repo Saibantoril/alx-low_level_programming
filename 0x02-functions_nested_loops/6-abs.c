@@ -7,8 +7,8 @@
  * Return: 0
  */
 int _abs(int c)
-{i
-	f (c > 0 || c == 0)
+{
+	if (c > 0 || c == 0)
 	{
 		return (c);
 	}
