@@ -4,8 +4,11 @@
 /**
  * print_square - prints squares
  * @size: parameter
+ *
  * Return: returns nothing
+ *
  */
+
 void print_square(int size)
 {
 	int inc1, inc2;
@@ -21,9 +24,9 @@ void print_square(int size)
 			putchar('#');
 			putchar('\n');
 		}
-		else
-		{
-			putchar('\n');
-		}
+	}
+	else
+	{
+		putchar('\n');
 	}
 }
