@@ -1,5 +1,5 @@
+#include "holberton.h"
 #include <stdio .h>
-#include "main.h"
 
 /**
  * rev_string - This fuction print a string reverser
