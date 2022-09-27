@@ -6,6 +6,7 @@
  * accept: string to check against
  * Return: pointer to byte in s that matches or NULL if no match
  */
+
 char *_strpbrk(char *s, char *accept)
 {
 	unsigned int i, j;
