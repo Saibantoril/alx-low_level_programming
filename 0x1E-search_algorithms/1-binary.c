@@ -1,40 +1,44 @@
-#include <stdio.h>
 #include "search_algos.h"
 
 /**
- * binary_search - searches for a value in a sorted array of integers
- * using the binary search algorithm
- * @array: a pointer to the first element of the array to search in
- * @size: the number of elements in array
- * @value: the value to search for
+ * binary_search - searches for a value in an integer array using a binary
+ * search algorithm, not guaranteed to return lowest index if `value` appears
+ * twice in `array`
+ * @array: pointer to first element of array to seach
+ * @size: number of elements in array
+ * @value: value to search for
  *
- * Return: the index where value is locate
- * or -1 if not found or if array is NULL
+ * Return: index containing `value`, or -1 if `value` not found or
+ * `array` is NULL
  */
+
 int binary_search(int *array, size_t size, int value)
 {
-	if (array == NULL || size == 0)
-		return (-1);
+	int low, mid, high;
+	int x;
 
-	int left = 0;
-	int right = size - 1;
-	int mid;
-
-	while (left <= right)
+	if (array == NULL)
 	{
-		mid = (left + right) / 2;
+		return (-1);
+	}
 
-		printf("Searching in subarray: ");
-		for (int i = left; i <= right; i++)
-			printf("%d ", array[i]);
-		printf("\n");
+	low = 0;
+	high = size - 1;
 
-		if (array[mid] == value)
-			return (mid);
+	while (low <= high)
+	{
+		mid = (low + high) / 2;
+
+		printf("Searching in array: ");
+		for (x = low; x <= high; x++)
+			printf("%i%s", array[x], x == high ? "\n" : ", ");
+
+		if (array[mid] < value)
+			low = mid + 1;
 		else if (array[mid] > value)
-			right = mid - 1;
+			high = mid - 1;
 		else
-			left = mid + 1;
+			return (mid);
 	}
 
 	return (-1);
